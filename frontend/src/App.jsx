@@ -74,40 +74,40 @@ function App() {
   }
 
   return (
-    <>
-      <h1>Todos</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          I want to:
-          <br />
-          <input type="text" ref={textRef} />
-        </label>
-        <label>
-          <input type="checkbox" ref={completeRef} />
-        </label>
-        <br/><br/>
-        <button>Add Todo</button>
-      </form>
-      <br/><br/>
-        {
-          isLoading ?
-            <p>Loading...</p>
-            :
-          todos.map((todo) => 
-              <p 
-                style={{ textDecoration: todo.completed ? 'line-through' : '' }} 
-                key={todo._id}>
-                  {todo.text} 
-                  <span 
-                    onClick={() => handleDelete(todo._id)} 
-                    style={{ marginLeft: '15px', fontWeight: '500', cursor: 'pointer' }}>
-                      X
-                  </span>
-              </p>
-          )
-        }
-    </>
-  )
+    <div>
+            <h1>Todos</h1>
+  <form onSubmit={handleSubmit}>
+    <label>
+      I want to:
+      <br />
+      <input type="text" ref={textRef} />
+    </label>
+    <label>
+      <input type="checkbox" ref={completeRef} />
+    </label>
+    <br/><br/>
+    <button>Add Todo</button>
+  </form>
+  <br/><br/>
+    {
+      isLoading ?
+        <p>Loading...</p>
+        :
+      todos.map((todo) => 
+          <p 
+            style={{ textDecoration: todo.completed ? 'line-through' : '' }} 
+            key={todo._id}>
+              {todo.text} 
+              <span 
+                onClick={() => handleDelete(todo._id)} 
+                style={{ marginLeft: '15px', fontWeight: '500', cursor: 'pointer' }}>
+                  X
+              </span>
+          </p>
+      )
+    }
+    </div>
+);
 }
 
 export default App
