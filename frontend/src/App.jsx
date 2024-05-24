@@ -4,7 +4,7 @@ import './App.css'
 
 const BASE_URL = import.meta.env.DEV ? 
 'http://localhost:8080/api/todos' :
-'https://todos-backend-dyx1.onrender.com'
+'https://todos-backend-dyx1.onrender.com/api/todos'
 //console.log(import.meta.env.DEV)
 function App() {
 
