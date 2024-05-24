@@ -2,8 +2,10 @@ import { useState, useRef, useEffect } from 'react'
 
 import './App.css'
 
-const BASE_URL = 'http://localhost:8080/api/todos'
-
+const BASE_URL = import.meta.env.DEV ? 
+'http://localhost:8080/api/todos' :
+'https://todos-backend-k3am.onrender.com'
+//console.log(import.meta.env.DEV)
 function App() {
 
   const [isLoading, setIsLoading] = useState(false)
